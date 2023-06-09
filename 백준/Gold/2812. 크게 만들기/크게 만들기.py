@@ -1,12 +1,12 @@
-n, k = map(int,input().split())
-number = list(input())
-
-answer = []
-cnt = k
-for num in number:
-    while answer and cnt>0 and num>answer[-1]:
-        del answer[-1]
-        cnt -=1
-    answer.append(num)
-print(''.join(answer[:n-k]))
-        
+N, K = map(int,input().split())
+number_list = list(input())
+stack = []
+cnt = K
+for num in number_list:
+    while stack and num>stack[-1] and cnt>0:
+        del stack[-1]
+        cnt -= 1
+    stack.append(num)
+print(''.join(stack[:N-K]))
+    
+    
