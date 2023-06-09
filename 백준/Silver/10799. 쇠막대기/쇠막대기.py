@@ -6,7 +6,7 @@ for i in range(len(galho)):
     if galho[i] == '(':
         stack.append('(')
     else:
-        if galho[i - 1] == '(':
+        if galho[i-1] == '(':
             stack.pop()
             answer += len(stack)
         else:
