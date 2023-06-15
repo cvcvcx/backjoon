@@ -1,20 +1,16 @@
 def solution(players, callings):
     player_dic = {player:i for i, player in enumerate(players)}
-    rank_dic = {i:player for i,player in enumerate(players)}
     
     for call in callings:
         cur_idx = player_dic[call]
         pre_idx = cur_idx-1
-#         pre_idx = cur_idx-1
         
-        cur_player = call
-        pre_player = rank_dic[pre_idx]
+        player_dic[call] -= 1
+        player_dic[players[pre_idx]] += 1
         
-        rank_dic[pre_idx] = cur_player
-        rank_dic[cur_idx] = pre_player
-        
-        player_dic[pre_player] = cur_idx
-        player_dic[cur_player] = pre_idx
+        temp = players[pre_idx]
+        players[pre_idx] = players[cur_idx]
+        players[cur_idx] = temp
         
         
-    return list(rank_dic.values())
+    return players
