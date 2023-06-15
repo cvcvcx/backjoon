@@ -1,17 +1,13 @@
 def solution(id_list, report, k):
-    answer = [0]*len(id_list)
+    answer = [0] * len(id_list)
+    reported_id_dic = {id:0 for id in id_list}
     
-    reported_man_set_arr = [set() for _ in range(len(id_list))]
+    #신고당한 유저의 dic의 value에 += 1
+    for r in set(report):
+        reported_id_dic[r.split()[1]] += 1
+    #set(report)에 있는 값들을 순회하면서 신고횟수가 k 이상인 값을 찾기
+    for r in set(report):
+        if reported_id_dic[r.split()[1]] >= k:
+            answer[id_list.index(r.split()[0])] += 1
     
-    for r in report:
-        report_man = r.split()[0]
-        reported_man = r.split()[1]    
-        reported_man_set = reported_man_set_arr[id_list.index(reported_man)]
-        reported_man_set.add(report_man)
-        
-    for report_man_set in reported_man_set_arr:
-        if len(report_man_set) >= k:
-            for man in report_man_set:
-                answer[id_list.index(man)] += 1
-                
     return answer
