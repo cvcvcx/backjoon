@@ -1,9 +1,9 @@
 def solution(babbling):
     answer = 0
-    say_word_list = ["aya","ye","woo","ma"]
-    for word in babbling:
-        for say_word in say_word_list:
-            word = word.replace(say_word,"!",1)
-        if word.replace("!",'') == '':
+    say_list = ["aya","ye","woo","ma"]
+    for b in babbling:
+        for s in say_list:
+            b = b.replace(s,"!",1)
+        if b.replace("!","") == "":
             answer += 1
     return answer
