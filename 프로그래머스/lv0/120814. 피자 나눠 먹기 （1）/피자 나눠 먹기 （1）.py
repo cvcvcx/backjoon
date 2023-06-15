@@ -1,6 +1,4 @@
-import math
 def solution(n):
-    answer = 0
     piece = 7
-    answer = math.ceil(n/piece)
+    answer = int(n/piece+1) if n % piece != 0 else int(n/piece)
     return answer
