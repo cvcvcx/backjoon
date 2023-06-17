@@ -8,6 +8,7 @@ def solution(s):
                 answer += w.upper()
             else:
                 answer += w.lower()
+      #공백 문자열이 끝날 때, 공백 추가
         answer += " "
     answer = answer[:-1]
     return answer
