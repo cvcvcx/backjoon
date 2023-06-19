@@ -1,8 +1,8 @@
 student = []
-for i in range(30):
-    student.append(i+1)
+for i in range(1,30+1):
+    student.append(i)
 for _ in range(28):
-    input_num = int(input())
-    student.remove(input_num)
-for item in student:
-    print(item)
+    x = int(input())
+    student.remove(x)
+for s in student:
+    print(s)
