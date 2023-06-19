@@ -1,10 +1,12 @@
 def solution(A, B):
-    answer = 0
+    answer = -1
+    if A == B:
+        return 0
     for i in range(len(A)):
-        if B == A:
+        
+        A = A[-1] + A[0:len(A)-1]
+        if A==B:
+            answer = i+1
             break
-        answer += 1
-        A = A[-1]+A[:len(A)-1]
-    if A != B:
-        return -1
+    
     return answer
