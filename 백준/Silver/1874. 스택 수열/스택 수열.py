@@ -1,4 +1,7 @@
-n = int(input())
+import sys
+
+input = sys.stdin.readline
+n = int(input().strip())
 # 숫자가 들어가는 스택
 stack = []
 # +,- 기호가 들어가는 리스트
@@ -8,7 +11,7 @@ flag = 0
 # 지금 스택에 들어갈 숫자
 cur = 1
 for _ in range(n):
-    num = int(input())
+    num = int(input().strip())
     while cur <= num:
         stack.append(cur)
         answer.append("+")
