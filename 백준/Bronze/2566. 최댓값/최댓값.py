@@ -1,16 +1,9 @@
-line_num = 0
-idx_num = 0
-num_list_arr = []
-max_num_list = []
-max_num_idx_list = []
+num_list_arr = [list(map(int,input().split())) for _ in range(9)]
+v, a = 0, [0,0]
 for i in range(9):
-    tmp = list(map(int,input().split()))
-    num_list_arr.append(tmp)
-    max_num_list.append(max(tmp))
-    max_num_idx_list.append(tmp.index(max(tmp)))
-final_max_num = max(max_num_list)
-line_num = max_num_list.index(final_max_num)
-idx_num = max_num_idx_list[line_num]
-
-print(final_max_num)
-print(line_num+1,idx_num+1)
+    for j in range(9):
+        if num_list_arr[i][j] >= v:
+            v = num_list_arr[i][j]
+            a = [i+1,j+1]
+print(v)
+print(*a)
