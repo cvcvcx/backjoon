@@ -1,13 +1,5 @@
-s_list = []
-len_list = []
-for _ in range(5):
-    word = input()
-    s_list.append(word)
-    len_list.append(len(word))
-    
-answer = ''
-for i in range(max(len_list)):
-    for j in range(5):
-        if i < len_list[j]:
-            answer += s_list[j][i]
-print(answer)
+word_list = [input() for _ in range(5)]
+for j in range(15):
+    for i in range(5):
+        if len(word_list[i])>j:
+            print(word_list[i][j],end = "")
