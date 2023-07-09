@@ -20,7 +20,9 @@ n = int(input())
 score_list = [int(input()) for _ in range(n)]
 max_score = score_list[len(score_list)-1]
 answer = 0
-
+# 최대치(배열의 끝)는 반복문에서 빠져야지 정확한 수치가 나옴
+# 그래서 범위를 2부터 시작하게끔 함 (n이 3인경우, [2]가 최대치가 되므로, [1]의 값부터 비교할 수 있게끔
+# 항상 그리디는 범위를 제대로 정하는것이 중요한듯!
 for i in range(2,n+1):
     if score_list[n-i] < max_score:
         max_score = score_list[n-i]
