@@ -1,20 +1,17 @@
 class Solution {
-    
     public String solution(String s) {
         StringBuilder sb = new StringBuilder();
-        char[] arr = s.toCharArray();
+        String[] stringArr = s.split("");
         boolean isUpper = true;
-        for(char c : arr){
-            if(c == ' '){
-                isUpper = true;
-                sb.append(c);
+        for(String w : stringArr){
+            if(isUpper){
+                sb.append(w.toUpperCase());
+                isUpper = false;
             }else{
-                if(isUpper == true){
-                    sb.append(Character.toUpperCase(c));
-                    isUpper = false;
-                }else{
-                    sb.append(Character.toLowerCase(c));
-                }
+                sb.append(w.toLowerCase());
+            }
+            if(w.equals(" ")){
+                isUpper = true;
             }
         }
         
